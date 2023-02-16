@@ -1,0 +1,23 @@
+import pandas as pd
+
+# Read in the data from a CSV file
+data = pd.read_csv('restaurant_data.csv')
+
+# Select the rows where the preferred restaurant type is Italian
+italian_data = data[data['preferred_restaurant'] == 'Italian']
+
+# Print out the selected data
+print(italian_data)
+import matplotlib.pyplot as plt
+
+# Create a bar chart of age groups
+age_counts = italian_data['age'].value_counts()
+plt.bar(age_counts.index, age_counts.values)
+
+# Add labels and title to the chart
+plt.xlabel('Age group')
+plt.ylabel('Frequency')
+plt.title('Preferred Italian restaurants by age group')
+
+# Display the chart
+plt.show()
